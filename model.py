@@ -81,8 +81,27 @@ def trainable_fraction(trainable_count, total_count):
     # TODO: return the fraction of parameters that are trainable.
     return float(trainable_count/total_count)
 
-# Step 9 - build_instruction_examples (not yet solved)
-# TODO: implement
+# Step 9 - build_instruction_examples
+def build_instruction_examples():
+    """Return a small list of {'instruction', 'response'} dicts for SFT."""
+    return [
+        {
+            "instruction": "Summarize the difference between supervised and unsupervised learning in one sentence.",
+            "response": "Supervised learning trains models on labeled input-output pairs, whereas unsupervised learning discovers hidden patterns in unlabeled data.",
+        },
+        {
+            "instruction": "Write a Python function that checks whether a string is a palindrome.",
+            "response": "def is_palindrome(text):\n    cleaned = ''.join(ch.lower() for ch in text if ch.isalnum())\n    return cleaned == cleaned[::-1]",
+        },
+        {
+            "instruction": "Give three concise tips for reducing overfitting in a neural network.",
+            "response": "1. Apply dropout or weight decay regularization.\n2. Use early stopping based on validation loss.\n3. Increase training data diversity via augmentation.",
+        },
+        {
+            "instruction": "Convert 72 degrees Fahrenheit to Celsius.",
+            "response": "72°F is approximately 22.2°C.",
+        },
+    ]
 
 # Step 10 - format_instruction_example (not yet solved)
 # TODO: implement
